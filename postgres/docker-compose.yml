@@ -1,0 +1,9 @@
+version: '3'
+services:
+  postgresql:
+    image: "postgres"
+    env_file:
+      - postgres_db.env
+    ports:
+      - 3432:5432
+
