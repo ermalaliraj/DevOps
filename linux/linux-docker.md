@@ -8,4 +8,4 @@ docker run -ti --rm ubuntu:20.04
 
 
 ### Links
-- [Main](../)
+- [Main](./../)
