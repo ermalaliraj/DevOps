@@ -1,4 +1,4 @@
-# MongoDB
+# MongoDB in Docker
 
 ### Docker Compose 
 ```
@@ -29,7 +29,7 @@ db.dropUser("admin", {w: "majority", wtimeout: 4000})
 mongo mongodb://admin:AdminAdmin@localhost:27017/admin
 ```
 
-### Connect in the container 
+### Connect to the container 
 ```
 docker exec -it mongo bash
 ```
@@ -38,3 +38,6 @@ docker exec -it mongo bash
 ```
 docker logs -f mongo
 ```
+
+### Links
+- [Main](../)
