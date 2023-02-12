@@ -104,4 +104,4 @@ sudo apt-get install -y mongodb-org
 ### Links
 - [1](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/)
 - [2](https://stackoverflow.com/questions/48092353/failed-to-start-mongod-service-unit-mongod-service-not-found)
-- [Main](../)
+- [Main](./../README.md)

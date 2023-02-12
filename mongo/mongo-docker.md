@@ -40,4 +40,4 @@ docker logs -f mongo
 ```
 
 ### Links
-- [Main](../)
+- [Main](./../README.md)

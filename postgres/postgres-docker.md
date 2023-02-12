@@ -24,4 +24,4 @@ docker logs -f postgres
 ```
 
 ### Links
-- [Main](../)
+- [Main](./../README.md)
