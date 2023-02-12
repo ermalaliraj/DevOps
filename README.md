@@ -9,3 +9,4 @@
     - [Common Commands](./mongo/mongo-commands.md)
 - [PostgresSQL](./postgres) 
     - [Docker](./postgres/postgres-docker.md)
+- [MySql](./mysql/mysql-linux.md) 

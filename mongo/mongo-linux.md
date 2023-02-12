@@ -10,6 +10,15 @@ sudo apt-get update
 sudo apt-get install -y mongodb-org
 ```
 
+### Service
+    sudo systemctl start mongod   (start / status / stop / restart / daemon-reload / restart / restart)
+    sudo systemctl enable mongod    (to start on system reboot)
+    sudo systemctl disable mongod
+    
+### Connect
+    mongo
+    use admin
+
 ### Creates
     /var/lib/mongodb    (mongodb:mongodb) 
     /var/log/mongodb    (mongodb:mongodb)
@@ -37,11 +46,6 @@ sudo apt-get install -y mongodb-org
     LimitMEMLOCK=infinity
     TasksMax=infinity
     TasksAccounting=false
-
-### Service
-    sudo systemctl start mongod   (start / status / stop / restart / daemon-reload / restart / restart)
-    sudo systemctl enable mongod    (to start on system reboot)
-    sudo systemctl disable mongod
     
 ### Useful commands & Errors
     tail -100 /var/log/mongodb/mongod.log
@@ -70,37 +74,22 @@ sudo apt-get install -y mongodb-org
     sudo apt-get purge mongo*
     
     sudo find / -name "*mongo*"
-    sudo rm -r /var/log/mongodb
-    sudo rm -r /var/lib/mongodb
-    sudo rm -r /var/cache/apt/archives/mongodb*
-    sudo rm -r /var/lib/apt/lists/repo.mongodb*
-    sudo rm -r /var/crash/mongo*
-    sudo rm -r /etc/apt/sources.list.d/mongodb-org-6.0.list
+    
+    sudo rm -r /tmp/mongod*
+    sudo rm -r /var/log/mongodb*
+    sudo rm -r /var/lib/dpkg/info/mongodb*
     sudo rm -r /usr/bin/mongo*
     sudo rm -r /usr/lib/mongo*
-    sudo rm -r /root/.mongo*
-    sudo rm -r /var/lib/dpkg/info/mongo*
-    sudo rm -r /tmp/mongod*
-    sudo rm -r /etc/systemd/system/multi-user.target.wants/mongod.service
-    
-    sudo rm -r /usr/lib/systemd/system/udo systemctl start mongod
-    sudo rm -r /usr/lib/systemd/system/mongodb.service
     sudo rm -r /usr/share/doc/mongo*
-    sudo rm -r /var/cache/apt/archives/mongodb*
-    
-    sudo rm -r /usr/lib/systemd/system/*mongod*
-    sudo rm -r /usr/share/man/man1/mongo*
-    sudo rm -r /usr/share/vim/vim81/keymap/mongolian_utf-8.vim
-    sudo rm -r /var/cache/apt/archives/mongo-tools_3.6.3-0ubuntu1_amd64.deb
-    
-    sudo rm -r /root/*mongo*
+    sudo rm -r /etc/mongo*
+    sudo rm -r /etc/apt/sources.list.d/mongodb-org-6.0.list
+    sudo rm -r /etc/systemd/system/multi-user.target.wants/mongod.service
+    sudo rm -r /root/.mongo*
     
 ### Remove Mongo user
     sudo userdel -r mongodb
     sudo groupdel mongodb
-    
-    
-    
+       
 ### Links
 - [1](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/)
 - [2](https://stackoverflow.com/questions/48092353/failed-to-start-mongod-service-unit-mongod-service-not-found)
