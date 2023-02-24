@@ -1,7 +1,7 @@
 # Linux
 
 DigitalOcean 
-- dev.dealofthedeal 46.101.139.217
+- eatech-dev-8gb 46.101.139.217
 
 
 ### Install
@@ -28,19 +28,37 @@ DigitalOcean
     free -g -h -t
 
 ### Memory Usage
-******************  FRESH 46.101.139.217 ******************
-root@dev:~# free -g -h -t
-               total        used        free      shared  buff/cache   available
-Mem:           7.8Gi       177Mi       7.1Gi       0.0Ki       459Mi       7.4Gi
-Swap:             0B          0B          0B
-Total:         7.8Gi       177Mi       7.1Gi
+    ******************  FRESH 46.101.139.217 ******************
+    root@dev:~# free -g -h -t
+                   total        used        free      shared  buff/cache   available
+    Mem:           7.8Gi       177Mi       7.1Gi       0.0Ki       459Mi       7.4Gi
+    Swap:             0B          0B          0B
+    Total:         7.8Gi       177Mi       7.1Gi
+    
+    root@dev:~# cat /proc/meminfo | grep -E "MemTotal|MemAvailable|MemFree"
+    MemTotal:        8139732 kB
+    MemFree:         7477324 kB
+    MemAvailable:    7699996 kB
 
-root@dev:~# cat /proc/meminfo | grep -E "MemTotal|MemAvailable|MemFree"
-MemTotal:        8139732 kB
-MemFree:         7477324 kB
-MemAvailable:    7699996 kB
-
-
+### 
+    /etc/iptables/iptables.sh
+    
+### Packages 
+    apt-key list
+    sudo rm /etc/apt/sources.list.d/*  (danger!)
+    sudo apt update
+    
+### Firewall - Allow remote connection
+    sudo apt-get install ufw  (if new)
+    sudo ufw enable
+    sudo lsof -i | grep mongo
+    curl -4 icanhazip.com      (on the remote machine to read the IP, my case 81.242.90.128)
+    sudo ufw status            
+    sudo ufw allow 27017
+    sudo ufw allow from 81.242.90.128 to any port 27017
+    sudo ufw status numbered
+    sudo ufw delete {num}
+    
 ### Users
     cat /etc/passwd | grep mongodb
     nano /root/.ssh/authorized_keys
