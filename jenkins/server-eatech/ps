@@ -1,0 +1,2 @@
+root@dev:~# ps -aux | grep jenkins
+jenkins     7314 50.0 28.2 5783308 2296396 ?     Ssl  18:00   1:06 /usr/bin/java -Djava.awt.headless=true -jar /usr/share/java/jenkins.war --webroot=/var/cache/jenkins/war --httpPort=8080

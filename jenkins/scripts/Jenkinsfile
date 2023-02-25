@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    triggers{
+        pollSCM "H/5* * * *"
+    }
+    stages {
+        stage('Build') {
+            steps {
+                echo "Building..."
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Testing..."
+                sh '''
+                echo "while Testing..."
+                '''
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo "Deploying..."
+                sh '''
+                 echo "while Deploying..."
+                '''
+            }
+        }
+    }
+}

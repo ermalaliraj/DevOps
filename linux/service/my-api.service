@@ -1,0 +1,16 @@
+[Unit]
+Description=My API
+
+[Service]
+WorkingDirectory=/home/ermal/projects/my-api/
+ExecStart=/usr/bin/java -Xms1G -Xmx4G -XX:+HeapDumpOnOutOfMemoryError -jar JobTrueffelAPI-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev
+User=ermal
+Type=simple
+StandardOutput=null
+StandardError=null
+Restart=always
+RestartSec=15
+TimeoutSec=30
+
+[Install]
+WantedBy=multi-user.target

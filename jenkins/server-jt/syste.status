@@ -1,4 +1,4 @@
-ermal@jt-tools-01:/home$ sudo systemctl status jenkins
+ermal@jt-tools-01:~$ sudo systemctl status jenkins
 ● jenkins.service - Jenkins Continuous Integration Server
    Loaded: loaded (/lib/systemd/system/jenkins.service; enabled; vendor preset: enabled)
   Drop-In: cat

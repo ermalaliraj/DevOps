@@ -10,3 +10,10 @@
 - [PostgresSQL](./postgres) 
     - [Docker](./postgres/postgres-docker.md)
 - [MySql](./mysql/mysql-linux.md) 
+
+
+### Ubuntu
+
+### Java
+    sudo apt-get install openjdk-11-jdk
+    sudo apt-get install maven

@@ -1,0 +1,6 @@
+ermal@jt-tools-01:~$ ps -aux | grep jenkins
+root     14428  0.0  0.0   9824  3148 pts/13   S    Jan22   0:00 su - jenkins
+jenkins  14429  0.0  0.0   8388  5060 pts/13   S+   Jan22   0:00 -bash
+jenkins  19727  0.1 10.0 42952708 13325952 ?   Ssl  Jan23  50:29 /usr/bin/java -Djava.awt.headless=true -jar /usr/share/java/jenkins.war --webroot=/var/cache/jenkins/war --httpPort=8071
+jenkins  21535  0.0  0.0  81304   644 ?        Ss   Jan23   0:00 gpg-agent --homedir /var/lib/jenkins/.gnupg --use-standard-socket --daemon
+ermal    23109  0.0  0.0   6548   884 pts/0    S+   18:26   0:00 grep jenkins

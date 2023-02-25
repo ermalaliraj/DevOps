@@ -13,7 +13,13 @@ DigitalOcean
     ps -aux | grep java
     top
     kill -9 63772
-     
+    find / -name "*.service" -not \( -path "/tmp" -type d -prune \) | sort -V
+    find /lib/systemd/system -name "*.service" 
+    find /lib/systemd/system -name "jenkins.service" 
+    sudo lsof -i | grep 8080
+    sudo netstat -tunlp
+    getent passwd
+    getent passwd | grep jenkins
 ### System Info
     cat /etc/os-release
     hostnamectl
@@ -60,9 +66,19 @@ DigitalOcean
     sudo ufw delete {num}
     
 ### Users
-    cat /etc/passwd | grep mongodb
-    nano /root/.ssh/authorized_keys
-    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDMHy....
+    useradd -d /home/ermal -s /bin/bash ermal
+    passwd ermal
+    nano /etc/sudoers (ermal ALL=(all:all) ALL
+    su - ermal
+    ssh-keygen -t rsa -b 4096
+    nano .ssh /authorized_keys   (copy the public keys of machine which want to connect. linux passwordless authentication)
+    chmod 600 .shh/authorized_keys
+    
+    getent passwd
+    getent group
+    userdel jenkins
 
+    nano /root/.ssh/authorized_keys  (for the root)
+   
 ### Links
 - [Main](./../README.md)
