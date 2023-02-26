@@ -98,7 +98,7 @@ sudo apt-get install libssl1.1
     sudo groupdel mongodb
     
 ### Memory Usage
-    ******************  After Mongo installation 46.101.139.217 ******************
+    ******************  After Mongo installation 46.101.139.217 (2023/02/24) ******************
     root@dev:~# free -g -h -t
                    total        used        free      shared  buff/cache   available
     Mem:           7.8Gi       257Mi       6.1Gi        12Mi       1.5Gi       7.2Gi

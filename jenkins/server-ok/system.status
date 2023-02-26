@@ -1,11 +1,11 @@
-ermal@jt-tools-01:~$ sudo systemctl status jenkins
+ermal@jt-tools-01:/etc/systemd/system/jenkins.service.d$ systemctl status jenkins
 ● jenkins.service - Jenkins Continuous Integration Server
    Loaded: loaded (/lib/systemd/system/jenkins.service; enabled; vendor preset: enabled)
-  Drop-In: cat
+  Drop-In: /etc/systemd/system/jenkins.service.d
            └─override.conf
-   Active: active (running) since Mon 2023-01-23 08:40:27 CET; 1 months 1 days ago
+   Active: active (running) since Mon 2023-01-23 08:40:27 CET; 1 months 2 days ago
  Main PID: 19727 (java)
-    Tasks: 99 (limit: 4915)
+    Tasks: 101 (limit: 4915)
    Memory: 14.0G
    CGroup: /system.slice/jenkins.service
            ├─19727 /usr/bin/java -Djava.awt.headless=true -jar /usr/share/java/jenkins.war --webroot=/var/cache/jenkins/war --httpPort=8071

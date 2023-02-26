@@ -17,3 +17,8 @@
 ### Java
     sudo apt-get install openjdk-11-jdk
     sudo apt-get install maven
+    
+### Node
+    curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+    sudo apt-get install npm

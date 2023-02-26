@@ -1,0 +1,12 @@
+root@dev:/etc/systemd/system# systemctl status jenkins
+● jenkins.service - Jenkins Continuous Integration Server
+   Loaded: loaded (/lib/systemd/system/jenkins.service; enabled; preset: enabled)
+  Drop-In: /etc/systemd/system/jenkins.service.d
+           └─override.conf
+   Active: active (running) since Sat 2023-02-25 14:01:47 UTC; 2s ago
+ Main PID: 46349 (java)
+    Tasks: 53 (limit: 9491)
+   Memory: 433.5M
+      CPU: 27.381s
+   CGroup: /system.slice/jenkins.service
+             └─46349 /usr/bin/java -Djava.awt.headless=true -jar /usr/share/java/jenkins.war --webroot=/var/cache/jenkins/war --httpPort=8061

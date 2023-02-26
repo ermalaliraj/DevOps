@@ -3,7 +3,7 @@ Description=My API
 
 [Service]
 WorkingDirectory=/home/ermal/projects/my-api/
-ExecStart=/usr/bin/java -Xms1G -Xmx4G -XX:+HeapDumpOnOutOfMemoryError -jar JobTrueffelAPI-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev
+ExecStart=/usr/bin/java -Xms1G -Xmx4G -XX:+HeapDumpOnOutOfMemoryError -jar my-api-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev
 User=ermal
 Type=simple
 StandardOutput=null

@@ -1,7 +1,0 @@
-root@dev:~# sudo systemctl status jenkins
-× jenkins.service - Jenkins Continuous Integration Server
-     Loaded: loaded (/lib/systemd/system/jenkins.service; enabled; preset: enabled)
-     Active: failed (Result: exit-code) since Fri 2023-02-24 17:13:45 UTC; 10min ago
-    Process: 4367 ExecStart=/usr/bin/jenkins (code=exited, status=1/FAILURE)
-   Main PID: 4367 (code=exited, status=1/FAILURE)
-        CPU: 14ms

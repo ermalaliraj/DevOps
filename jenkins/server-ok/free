@@ -1,0 +1,5 @@
+ermal@jt-tools-01:/var/lib/jenkins$ free -g -h -t
+              total        used        free      shared  buff/cache   available
+Mem:          125Gi        58Gi        30Gi       955Mi        36Gi        65Gi
+Swap:         4.0Gi       401Mi       3.6Gi
+Total:        129Gi        58Gi        34Gi
