@@ -30,6 +30,8 @@ DigitalOcean
     sudo du -h  --max-depth 1
     df -h -x tmpfs -x devtmpfs
     
+    ip link show   (network interface)
+    
     sudo lsof -i -P -n | grep LISTEN
     free -g -h -t
 
@@ -73,6 +75,8 @@ DigitalOcean
     ssh-keygen -t rsa -b 4096
     nano .ssh /authorized_keys   (copy the public keys of machine which want to connect. linux passwordless authentication)
     chmod 600 .shh/authorized_keys
+    
+    cat /etc/passwd
     
     getent passwd
     getent group

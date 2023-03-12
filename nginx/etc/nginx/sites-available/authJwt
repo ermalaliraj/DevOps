@@ -1,0 +1,22 @@
+server {
+    server_name authJwt;
+    access_log syslog:server=livelog:10544,facility=local7,tag=nginx,severity=info livelog;
+
+    location /authJwt {
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Real-IP  $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Cookie $http_cookie;
+        proxy_set_header X-Graylog-Server-URL https://$server_name/;
+        allow 88.198.15.123; # self
+        allow 88.198.15.113; # self
+        allow 2a01:4f8:222:2d94::2; # self
+        allow 31.19.124.32; # home
+        deny all;
+
+        proxy_pass http://127.0.0.1:8031/;
+    }
+
+}

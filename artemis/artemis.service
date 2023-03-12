@@ -1,0 +1,15 @@
+[Unit]
+Description=Apache ActiveMQ Artemis
+After=syslog.target
+After=network.target
+
+[Service]
+User=artemis
+PIDFile=/var/lib/artemis/data/artemis.pid
+ExecStart=/var/lib/artemis/bin/artemis-service start
+ExecStop=/var/lib/artemis/bin/artemis-service stop
+ExecReload=/var/lib/artemis/bin/artemis-service restart
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

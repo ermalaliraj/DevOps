@@ -1,0 +1,16 @@
+[Unit]
+Description=Keycloak Server
+Requires=postgresql.service artemis.service
+After=syslog.target network.target
+
+[Service]
+Environment=LAUNCH_JBOSS_IN_BACKGROUND=1
+EnvironmentFile=-/etc/keycloak/keycloak.conf
+User=keycloak
+LimitNOFILE=102642
+PIDFile=/var/run/keycloak/keycloak.pid
+ExecStart=/etc/keycloak/launch.sh $KEYCLOAK_MODE $KEYCLOAK_CONFIG $KEYCLOAK_BIND
+StandardOutput=null
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+ermal@jt-tools-01:$ sudo systemctl status graylog-server
+● graylog-server.service - Graylog server
+   Loaded: loaded (/lib/systemd/system/graylog-server.service; enabled; vendor preset: enabled)
+   Active: active (running) since Tue 2022-04-19 11:30:48 CEST; 10 months 13 days ago
+     Docs: http://docs.graylog.org/
+ Main PID: 1067 (graylog-server)
+    Tasks: 259 (limit: 4915)
+   Memory: 1.7G
+   CGroup: /system.slice/graylog-server.service
+           ├─1067 /bin/sh /usr/share/graylog-server/bin/graylog-server
+           └─1381 /usr/bin/java -Xms1g -Xmx1g -XX:NewRatio=1 -server -XX:+ResizeTLAB -XX:-OmitStackTraceInFastThrow -Djdk.tls.acknowledgeCloseNotify=true -Dlog4j2.formatMsgNoLookups=true -XX:+U
+
