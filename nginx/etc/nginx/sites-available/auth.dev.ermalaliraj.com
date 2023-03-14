@@ -12,17 +12,20 @@ server {
         proxy_pass http://127.0.0.1:8080/;
     }
 
-    #listen [::]:443 ssl ipv6only=on; # managed by Certbot
-    #listen 443 ssl; # managed by Certbot
-    #ssl_certificate /etc/letsencrypt/live/dev.ermalaliraj.com/fullchain.pem; # managed by Certbot
-    #ssl_certificate_key /etc/letsencrypt/live/dev.ermalaliraj.com/privkey.pem; # managed by Certbot
-    #include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
-    #ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/auth.dev.ermalaliraj.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/auth.dev.ermalaliraj.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
 }
 
 server {
+    if ($host = auth.dev.ermalaliraj.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
     server_name auth.dev.ermalaliraj.com;
     listen 80;
-    listen [::]:80;
-    return 301 https://$host$request_uri;
+    return 404; # managed by Certbot
 }
